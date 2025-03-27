@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src ' https:; style-src 'self' 'unsafe-inline';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://chart.googleapis.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline';">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
@@ -17,16 +17,29 @@
 </head>
 <body>
   <main class="QRmain">
-    <img src="./images/image-qr-code.png" class="QRimage" alt="image-qr-code">
+    <img id="qrImage" src="./images/image-qr-code.png" class="QRimage" alt="QR code image">
       <div class="QRinner">
           <h3 class="QRtitle">Improve your front-end skills by building projects</h3>
 
-          <p class="QRpara">Scan the QR code to visit Forntend Mentor
+          <p class="QRpara">Scan the QR code to visit Frontend Mentor
               and take your coding skills to the next level</p>
+              
+          <form id="qrForm" class="QRform">
+              <div class="input-group">
+                  <input type="text" id="urlInput" placeholder="Enter URL (e.g., https://example.com)" required>
+                  <p id="errorMessage" class="error-message"></p>
+              </div>
+              <div class="button-group">
+                  <button type="submit" id="generateBtn" class="btn primary-btn">Generate QR</button>
+                  <button type="button" id="resetBtn" class="btn secondary-btn">Reset</button>
+                  <button type="button" id="downloadBtn" class="btn download-btn">Download</button>
+              </div>
+          </form>
       </div>
   </main>
   <div class="attribution">
 Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
     Coded by <a href="https://twitter.com/sushrutkm" target="_blank" rel="noopener noreferrer">Sushrut Kumar Mishra</a>.
+  <script src="./script.js"></script>
 </body>
-</html>
+</html>>
