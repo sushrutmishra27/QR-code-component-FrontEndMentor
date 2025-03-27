@@ -10,14 +10,15 @@
     --ff-primary: 'Outfit', sans-serif;
   }
   
-  body {
+body {
     background-color: var(--cl-LightGray);
     height: 100vh;
     font-size: 15px;
     font-family: var(--ff-primary);
     display: grid;
     place-items: center;
-  }
+    contain: content; /* Add containment for better performance */
+}
   
   .QRmain {
     padding: 1rem;
